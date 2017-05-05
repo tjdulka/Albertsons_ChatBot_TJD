@@ -1,0 +1,30 @@
+{
+  "endpointAddress" : "https://tjd-dashdb.mybluemix.net/order_status/808018200",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : {
+    "Authorization" : [ "Basic d2F0c29uOnBAc3N3MHJk" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"results\":{\"ORDER_NBR\":\"808018200\",\"ORDER_STATUS\":[{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3343,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-26\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3345,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-26\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3348,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-26\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3055,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-21\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3302,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-21\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3327,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-26\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3337,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-26\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3339,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-26\",\"PO_NBR\":null},{\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3341,\"DEST_FACILITY_ID\":2754,\"DW_CREATE_USER_ID\":\"EX0101\",\"SCHEDULE_DELIVERY_DT\":\"2017-02-21\",\"PO_NBR\":null}]}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "X-Backside-Transport" : [ "OK OK" ],
+      "Connection" : [ "Keep-Alive" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Content-Type" : [ "text/html; charset=utf-8" ],
+      "Date" : [ "Fri, 14 Apr 2017 18:41:44 GMT" ],
+      "Etag" : [ "\"-1337098570\"" ],
+      "Set-Cookie" : [ "connect.sid=s%3AK0S8xJ0xXbenwYIYG9ovF77R.4qUWRdlwRaPH3p00a9ZWHUGXwaGY6Jgbs6X3LbaNeg4; Path=/; HttpOnly" ],
+      "X-Powered-By" : [ "Express" ],
+      "X-Global-Transaction-ID" : [ "943541217" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "BASIC",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

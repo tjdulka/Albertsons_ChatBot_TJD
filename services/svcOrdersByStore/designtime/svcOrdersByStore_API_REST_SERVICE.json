@@ -1,0 +1,103 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "3ca1628e-6d93-4c93-9012-52f0d1eb42da",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "tjd-dashdb.mybluemix.net",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/svcOrdersByStore/invoke/orders_by_store/{store}" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "svcOrdersByStore_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "text/html" ],
+        "parameters" : [ {
+          "name" : "store",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/svcOrdersByStore/invoke/orders_by_store/{store}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.svcOrdersByStore.scheme}://${rest.svcOrdersByStore.host}${rest.svcOrdersByStore.basepath}/orders_by_store/{store}"
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "results" ],
+      "properties" : {
+        "results" : {
+          "$ref" : "#/definitions/results"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByStore.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "results" : {
+      "required" : [ "DEST_FACILITY_ID", "ORDERS" ],
+      "properties" : {
+        "ORDERS" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ORDERSEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "DEST_FACILITY_ID" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByStore.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "ORDERSEntryItem" : {
+      "required" : [ "ORDER_DT", "ORDER_NBR", "SHIP_FACILITY_ID" ],
+      "properties" : {
+        "SHIP_FACILITY_ID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ORDER_DT" : {
+          "type" : "string"
+        },
+        "ORDER_NBR" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByStore.ORDERSEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

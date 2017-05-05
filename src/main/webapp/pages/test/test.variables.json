@@ -1,0 +1,31 @@
+{
+  "SvcOrdersInvoke" : {
+    "_id" : "wm-SvcOrdersInvoke-wm.ServiceVariable-1493916425573",
+    "name" : "SvcOrdersInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrders.RootResponse",
+    "service" : "svcOrders",
+    "operation" : "invoke",
+    "operationId" : "svcOrders_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  }
+}

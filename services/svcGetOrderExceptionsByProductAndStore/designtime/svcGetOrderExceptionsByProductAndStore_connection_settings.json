@@ -1,0 +1,30 @@
+{
+  "endpointAddress" : "http://tjd-dashdb.mybluemix.net/order_exceptions_by_product_and_store/BROCCOLI/1594",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : {
+    "Authorization" : [ "Basic d2F0c29uOnBAc3N3MHJk" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"results\":{\"PRODUCT\":\"BROCCOLI\",\"STORE\":\"1594\",\"ORDER_EXCEPTIONS\":[{\"ORDER_NBR\":533050300,\"SCHEDULE_DELIVERY_DT\":\"2017-04-12\",\"DISCREPENCY_DSC\":\"MERCHANDISER REDUCES QUANTITY\",\"ITEM_DSC\":\"BROCCOLI ORGANIC\",\"ORDER_QTY\":1,\"MODIFY_QTY\":1,\"SHIP_QTY\":1,\"COM_ORDER_QTY\":1,\"COM_MODIFY_QTY\":0,\"COM_DEMAND_QTY\":1,\"EXE_DEMAND_QTY\":null,\"EXE_SHIP_QTY\":null},{\"ORDER_NBR\":533050300,\"SCHEDULE_DELIVERY_DT\":\"2017-04-12\",\"DISCREPENCY_DSC\":\"MERCHANDISER REDUCES QUANTITY\",\"ITEM_DSC\":\"S FARMS BROCCOLI & CAULIFLOWER\",\"ORDER_QTY\":1,\"MODIFY_QTY\":1,\"SHIP_QTY\":1,\"COM_ORDER_QTY\":1,\"COM_MODIFY_QTY\":0,\"COM_DEMAND_QTY\":1,\"EXE_DEMAND_QTY\":null,\"EXE_SHIP_QTY\":null},{\"ORDER_NBR\":533050300,\"SCHEDULE_DELIVERY_DT\":\"2017-04-12\",\"DISCREPENCY_DSC\":\"ITEM RESTRICTED-SHIPPING MEMO\",\"ITEM_DSC\":\"S FARMS BROCCOLI FLORETS\",\"ORDER_QTY\":1,\"MODIFY_QTY\":1,\"SHIP_QTY\":1,\"COM_ORDER_QTY\":1,\"COM_MODIFY_QTY\":0,\"COM_DEMAND_QTY\":0,\"EXE_DEMAND_QTY\":null,\"EXE_SHIP_QTY\":null}]}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "X-Backside-Transport" : [ "OK OK" ],
+      "Connection" : [ "Keep-Alive" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Content-Type" : [ "text/html; charset=utf-8" ],
+      "Date" : [ "Mon, 17 Apr 2017 19:12:06 GMT" ],
+      "Etag" : [ "\"-1476190\"" ],
+      "Set-Cookie" : [ "connect.sid=s%3AZr2RM2u6F7ylsmTFRONVNZpx.A60%2BxMfhj8R9euCTHml5b14avPFPfkEpeyJVGCHWy1g; Path=/; HttpOnly" ],
+      "X-Powered-By" : [ "Express" ],
+      "X-Global-Transaction-ID" : [ "2978021441" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "BASIC",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

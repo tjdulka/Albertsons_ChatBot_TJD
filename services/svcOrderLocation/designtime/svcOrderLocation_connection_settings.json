@@ -1,0 +1,30 @@
+{
+  "endpointAddress" : "http://tjd-dashdb.mybluemix.net/order_location/499250300",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : {
+    "Authorization" : [ "Basic d2F0c29uOnBAc3N3MHJk" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"results\":{\"ORDER_NBR\":\"499250300\",\"ORDER_STATUS\":[{\"ORDER_HDR_SK\":4530408,\"ORDER_DT\":\"2017-04-11\",\"DEST_FACILITY_ID\":1803,\"SHIP_FACILITY_ID\":3327,\"ORDER_NBR\":499250300,\"SCHEDULE_DELIVERY_DT\":\"2017-04-12\",\"SCHEDULE_DELIVERY_TIME\":\"15:40:00\",\"DELIVERY_DT\":\"2017-04-12\",\"DELIVERY_TIME\":null,\"TRUCK_ID\":100024,\"TRUCK_LOCATION_LAT\":\"37.7180\",\"TRUCK_LOCATION_LNG\":\"-121.5204\"},{\"ORDER_HDR_SK\":4530412,\"ORDER_DT\":\"2017-04-11\",\"DEST_FACILITY_ID\":1803,\"SHIP_FACILITY_ID\":3337,\"ORDER_NBR\":499250300,\"SCHEDULE_DELIVERY_DT\":\"2017-04-12\",\"SCHEDULE_DELIVERY_TIME\":\"16:00:00\",\"DELIVERY_DT\":\"2017-04-12\",\"DELIVERY_TIME\":null,\"TRUCK_ID\":100025,\"TRUCK_LOCATION_LAT\":\"37.7061\",\"TRUCK_LOCATION_LNG\":\"-121.9271\"}]}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "X-Backside-Transport" : [ "OK OK" ],
+      "Connection" : [ "Keep-Alive" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Content-Type" : [ "text/html; charset=utf-8" ],
+      "Date" : [ "Thu, 20 Apr 2017 19:55:02 GMT" ],
+      "Etag" : [ "\"236021243\"" ],
+      "Set-Cookie" : [ "connect.sid=s%3ALS14t7QXdXl6DMVa4waQCiqT.M79GKu5FHhpmdY35CRaR8QbkBgJouiXbRCcRwHOrZII; Path=/; HttpOnly" ],
+      "X-Powered-By" : [ "Express" ],
+      "X-Global-Transaction-ID" : [ "734761415" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "BASIC",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

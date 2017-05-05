@@ -1,0 +1,144 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.svcGetOrderExceptionsByProductAndStore.basepath}",
+  "paths" : {
+    "/order_exceptions_by_product_and_store/{product}/{store}" : {
+      "x-WM-BASE_PATH" : "/order_exceptions_by_product_and_store/{product}/{store}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "text/html" ],
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "product",
+          "type" : "string",
+          "required" : true,
+          "in" : "path"
+        }, {
+          "name" : "store",
+          "type" : "string",
+          "required" : true,
+          "in" : "path"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "svcGetOrderExceptionsByProductAndStore_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.svcGetOrderExceptionsByProductAndStore.scheme}://${rest.svcGetOrderExceptionsByProductAndStore.host}${rest.svcGetOrderExceptionsByProductAndStore.basepath}/order_exceptions_by_product_and_store/{product}/{store}"
+    }
+  },
+  "host" : "${rest.svcGetOrderExceptionsByProductAndStore.host}",
+  "schemes" : [ "${rest.svcGetOrderExceptionsByProductAndStore.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcGetOrderExceptionsByProductAndStore.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "results" : {
+          "$ref" : "#/definitions/results"
+        }
+      },
+      "required" : [ "results" ]
+    },
+    "results" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcGetOrderExceptionsByProductAndStore.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "ORDER_EXCEPTIONS" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/ORDER_EXCEPTIONSEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "PRODUCT" : {
+          "type" : "string"
+        },
+        "STORE" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "ORDER_EXCEPTIONS", "PRODUCT", "STORE" ]
+    },
+    "ORDER_EXCEPTIONSEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcGetOrderExceptionsByProductAndStore.ORDER_EXCEPTIONSEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "SCHEDULE_DELIVERY_DT" : {
+          "type" : "string"
+        },
+        "ITEM_DSC" : {
+          "type" : "string"
+        },
+        "COM_MODIFY_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ORDER_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "EXE_DEMAND_QTY" : {
+          "type" : "string"
+        },
+        "MODIFY_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "DISCREPENCY_DSC" : {
+          "type" : "string"
+        },
+        "COM_ORDER_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ORDER_NBR" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "COM_DEMAND_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "SHIP_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "EXE_SHIP_QTY" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "COM_DEMAND_QTY", "COM_MODIFY_QTY", "COM_ORDER_QTY", "DISCREPENCY_DSC", "EXE_DEMAND_QTY", "EXE_SHIP_QTY", "ITEM_DSC", "MODIFY_QTY", "ORDER_NBR", "ORDER_QTY", "SCHEDULE_DELIVERY_DT", "SHIP_QTY" ]
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "c5d998b3-77fd-4e17-a6cd-e0dbfe68496d",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

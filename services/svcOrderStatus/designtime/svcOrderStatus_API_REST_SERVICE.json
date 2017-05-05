@@ -1,0 +1,112 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "1f897751-d4eb-4743-813b-7ba5cc3bed18",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "tjd-dashdb.mybluemix.net",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/svcOrderStatus/invoke/order_status/{order}" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "svcOrderStatus_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "text/html" ],
+        "parameters" : [ {
+          "name" : "order",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/svcOrderStatus/invoke/order_status/{order}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.svcOrderStatus.scheme}://${rest.svcOrderStatus.host}${rest.svcOrderStatus.basepath}/order_status/{order}"
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "results" ],
+      "properties" : {
+        "results" : {
+          "$ref" : "#/definitions/results"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderStatus.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "results" : {
+      "required" : [ "ORDER_NBR", "ORDER_STATUS" ],
+      "properties" : {
+        "ORDER_STATUS" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ORDER_STATUSEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "ORDER_NBR" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderStatus.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "ORDER_STATUSEntryItem" : {
+      "required" : [ "DEST_FACILITY_ID", "DW_CREATE_USER_ID", "ORDER_DT", "PO_NBR", "SCHEDULE_DELIVERY_DT", "SHIP_FACILITY_ID" ],
+      "properties" : {
+        "SHIP_FACILITY_ID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "SCHEDULE_DELIVERY_DT" : {
+          "type" : "string"
+        },
+        "ORDER_DT" : {
+          "type" : "string"
+        },
+        "DW_CREATE_USER_ID" : {
+          "type" : "string"
+        },
+        "DEST_FACILITY_ID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "PO_NBR" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderStatus.ORDER_STATUSEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

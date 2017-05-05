@@ -1,0 +1,30 @@
+{
+  "endpointAddress" : "https://tjd-dashdb.mybluemix.net/orders_by_store/2754",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : {
+    "Authorization" : [ "Basic d2F0c29uOnBAc3N3MHJk" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"results\":{\"DEST_FACILITY_ID\":\"2754\",\"ORDERS\":[{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3343},{\"ORDER_NBR\":473118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3345},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3345},{\"ORDER_NBR\":808018201,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3345},{\"ORDER_NBR\":315018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3346},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3348},{\"ORDER_NBR\":135118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3349},{\"ORDER_NBR\":496118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":8403},{\"ORDER_NBR\":-1,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":null},{\"ORDER_NBR\":805118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3050},{\"ORDER_NBR\":604118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3052},{\"ORDER_NBR\":705118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3052},{\"ORDER_NBR\":512608200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3053},{\"ORDER_NBR\":-1,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3055},{\"ORDER_NBR\":0,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3055},{\"ORDER_NBR\":704118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3055},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3055},{\"ORDER_NBR\":805118200,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3302},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3302},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3327},{\"ORDER_NBR\":905018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3327},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3337},{\"ORDER_NBR\":671018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3339},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3339},{\"ORDER_NBR\":-1,\"ORDER_DT\":\"2017-02-21\",\"SHIP_FACILITY_ID\":3341},{\"ORDER_NBR\":808018200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3341},{\"ORDER_NBR\":322908200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3343},{\"ORDER_NBR\":523908200,\"ORDER_DT\":\"2017-02-20\",\"SHIP_FACILITY_ID\":3343}]}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "X-Backside-Transport" : [ "OK OK" ],
+      "Connection" : [ "Keep-Alive" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Content-Type" : [ "text/html; charset=utf-8" ],
+      "Date" : [ "Sat, 15 Apr 2017 03:13:23 GMT" ],
+      "Etag" : [ "\"588357080\"" ],
+      "Set-Cookie" : [ "connect.sid=s%3ATitJRbCKu93AthLZlkC1a3J8.6P31NfguhrCNVSJY8LZANWrbr0EwoBusd4k163VvWdQ; Path=/; HttpOnly" ],
+      "X-Powered-By" : [ "Express" ],
+      "X-Global-Transaction-ID" : [ "2328957991" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "BASIC",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

@@ -1,0 +1,143 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "59e0f50d-d46b-42b2-8426-e1b450adf2f0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "tjd-dashdb.mybluemix.net",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/svcOrderExceptionsByStore/invoke/order_exceptions_by_store/{store}" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "svcOrderExceptionsByStore_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "text/html" ],
+        "parameters" : [ {
+          "name" : "store",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/svcOrderExceptionsByStore/invoke/order_exceptions_by_store/{store}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.svcOrderExceptionsByStore.scheme}://${rest.svcOrderExceptionsByStore.host}${rest.svcOrderExceptionsByStore.basepath}/order_exceptions_by_store/{store}"
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "results" ],
+      "properties" : {
+        "results" : {
+          "$ref" : "#/definitions/results"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderExceptionsByStore.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "results" : {
+      "required" : [ "ORDER_EXCEPTIONS", "STORE" ],
+      "properties" : {
+        "ORDER_EXCEPTIONS" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ORDER_EXCEPTIONSEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "STORE" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderExceptionsByStore.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "ORDER_EXCEPTIONSEntryItem" : {
+      "required" : [ "COM_DEMAND_QTY", "COM_MODIFY_QTY", "COM_ORDER_QTY", "DISCREPENCY_DISPLAY_DSC", "DISCREPENCY_DSC", "DISCREPENCY_REASON_DSC", "EXE_DEMAND_QTY", "EXE_SHIP_QTY", "ITEM_DSC", "MODIFY_QTY", "ORDER_NBR", "ORDER_QTY", "SCHEDULE_DELIVERY_DT", "SHIP_QTY" ],
+      "properties" : {
+        "DISCREPENCY_REASON_DSC" : {
+          "type" : "string"
+        },
+        "SCHEDULE_DELIVERY_DT" : {
+          "type" : "string"
+        },
+        "DISCREPENCY_DISPLAY_DSC" : {
+          "type" : "string"
+        },
+        "COM_MODIFY_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "MODIFY_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "COM_ORDER_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "EXE_SHIP_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ITEM_DSC" : {
+          "type" : "string"
+        },
+        "ORDER_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "EXE_DEMAND_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "DISCREPENCY_DSC" : {
+          "type" : "string"
+        },
+        "ORDER_NBR" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "SHIP_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "COM_DEMAND_QTY" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderExceptionsByStore.ORDER_EXCEPTIONSEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

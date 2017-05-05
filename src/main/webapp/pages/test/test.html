@@ -1,0 +1,16 @@
+<wm-page data-ng-controller="testPageController" pagetitle="Test" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" dataset="bind:Variables.SvcOrdersInvoke.dataSet.results.ORDERS" navigation="Pager" name="livelist1">
+                <wm-listtemplate layout="inline" name="listtemplate1">
+                    <wm-container class="media-body" name="container2">
+                        <wm-label class="p media-heading" name="Name" caption="bind:Variables.SvcOrdersInvoke.dataSet.results.ORDERS.ORDER_NBR" fontunit="em" padding="unset unset unset 1.25em"></wm-label>
+                        <wm-label class="p media-heading" caption="bind:Variables.SvcOrdersInvoke.dataSet.results.ORDERS[$i].SCHEDULE_DELIVERY_DT" fontunit="em" padding="unset unset unset 1.25em" name="label2"></wm-label>
+                        <wm-label class="p media-heading" caption="bind:Variables.SvcOrdersInvoke.dataSet.results.ORDERS[$i].SHIP_FACILITY_ID" fontunit="em" padding="unset unset unset 1.25em" name="label3"></wm-label>
+                        <wm-label class="p media-heading" caption="bind:Variables.SvcOrdersInvoke.dataSet.results.ORDERS[$i].DEST_FACILITY_ID" fontunit="em" padding="unset unset unset 1.25em" name="label4"></wm-label>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-livelist>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

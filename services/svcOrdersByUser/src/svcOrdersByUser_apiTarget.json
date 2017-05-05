@@ -1,0 +1,108 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.svcOrdersByUser.basepath}",
+  "paths" : {
+    "/orders_by_user/{user}" : {
+      "x-WM-BASE_PATH" : "/orders_by_user/{user}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "text/html" ],
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "user",
+          "type" : "string",
+          "required" : true,
+          "in" : "path"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "svcOrdersByUser_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.svcOrdersByUser.scheme}://${rest.svcOrdersByUser.host}${rest.svcOrdersByUser.basepath}/orders_by_user/{user}"
+    }
+  },
+  "host" : "${rest.svcOrdersByUser.host}",
+  "schemes" : [ "${rest.svcOrdersByUser.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByUser.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "results" : {
+          "$ref" : "#/definitions/results"
+        }
+      },
+      "required" : [ "results" ]
+    },
+    "results" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByUser.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "ORDERS" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/ORDERSEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "DW_CREATE_USER_ID" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "DW_CREATE_USER_ID", "ORDERS" ]
+    },
+    "ORDERSEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByUser.ORDERSEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "SHIP_FACILITY_ID" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ORDER_DT" : {
+          "type" : "string"
+        },
+        "DEST_FACILITY_ID" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ORDER_NBR" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      },
+      "required" : [ "DEST_FACILITY_ID", "ORDER_DT", "ORDER_NBR", "SHIP_FACILITY_ID" ]
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "f2dc793f-325c-4414-9492-6a23f891de6f",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

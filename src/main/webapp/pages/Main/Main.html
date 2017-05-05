@@ -1,0 +1,138 @@
+<wm-page data-ng-controller="MainPageController" pagetitle="Main" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                        <wm-html name="html1" height="600" content="bind:Variables.htmlContent.dataSet.dataValue" show="false">bind:Variables.htmlContent.dataSet.dataValue</wm-html>
+                        <wm-prefab prefabname="watsonChatbot" name="askWatson" height="600" on-watsonresponse="askWatsonWatsonresponse($scope)"></wm-prefab>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn2">
+                        <wm-container name="OrderStatusContainer">
+                            <wm-label padding="unset 0.5em" name="label17" caption="Order Number:" fontweight="bold"></wm-label>
+                            <wm-label padding="unset 0.5em" name="label18" caption="bind:Variables.svcOrderStatus.dataSet.results.ORDER_NBR"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrderStatus.dataSet.results.ORDER_STATUS" navigation="None" name="grid3" pagesize="10">
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Store" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DW_CREATE_USER_ID" caption="User" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OrderLocationContainer">
+                            <wm-grid title="" dataset="bind:Variables.svcOrderLocation.dataSet.results.ORDER_STATUS" navigation="None" name="grid11">
+                                <wm-grid-column binding="TRUCK_ID" caption="Truck Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_TIME" caption="Scheduled Delivery Time" type="string" textalignment="center" formatpattern="toDate" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DELIVERY_TIME" caption="Delivery Time" type="string" textalignment="center" formatpattern="toDate" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                            <wm-prefab prefabname="googlemaps" name="googlemaps1" locations="bind:Variables.svcOrderLocation.dataSet.results.ORDER_STATUS" lat="TRUCK_LOCATION_LAT" lng="TRUCK_LOCATION_LNG" info="TRUCK_ID" icon="DELIVERY_TIME" zoom="10"></wm-prefab>
+                        </wm-container>
+                        <wm-container name="OrdersContainer">
+                            <wm-grid title="" dataset="bind:Variables.svcOrders.dataSet.results.ORDERS" navigation="Pager" name="grid1" pagesize="10" on-click="grid1Click($event, $scope, $rowData)">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false" on-click="ORDER_NBROnClick($event, $scope, rowData)"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Store" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="container5">
+                            <wm-container name="OrdersByProductContainer">
+                                <wm-label padding="unset 0.5em" caption="Product:" fontweight="bold" name="label5"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProduct.dataSet.results.PRODUCT" name="label6"></wm-label>
+                                <wm-grid title="" dataset="bind:Variables.svcOrdersByProduct.dataSet.results.ORDERS" navigation="Pager" name="grid4_1" pagesize="10">
+                                    <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="DEST_FACILITY_ID" caption="Store" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="SHIP_QTY" caption="Order Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                </wm-grid>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="OrdersByStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label7"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByStore.dataSet.results.DEST_FACILITY_ID" name="label8"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrdersByStore.dataSet.results.ORDERS" navigation="Pager" name="grid5" pagesize="10" on-click="grid5Click($event, $scope, $rowData)">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OrdersByUserContainer">
+                            <wm-label padding="unset 0.5em" caption="User:" fontweight="bold" name="label9"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByUser.dataSet.results.DW_CREATE_USER_ID" name="label10"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrdersByUser.dataSet.results.ORDERS" navigation="Pager" name="grid6" pagesize="10">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Store" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OrdersByProductAndStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label11"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProductAndStore.dataSet.results.STORE" name="label12"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="Product:" fontweight="bold" name="label17_1"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProductAndStore.dataSet.results.PRODUCT" name="label18_1"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrdersByProductAndStore.dataSet.results.ORDERS" navigation="Pager" pagesize="10" name="grid7">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_QTY" caption="Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OEByStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label13"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderExceptionsByStore.dataSet.results.STORE" name="label14"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrderExceptionsByStore.dataSet.results.ORDER_EXCEPTIONS" navigation="Pager" pagesize="10" name="grid8">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DISCREPENCY_REASON_DSC" caption="Reason" type="string" width="20%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DISCREPENCY_DISPLAY_DSC" caption="Action" type="string" width="20%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_QTY" caption="Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OEByProductAndStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label15"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderExceptionsByProductAndStore.dataSet.results.STORE" name="label16"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="Product:" fontweight="bold" name="label19_1"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderExceptionsByProductAndStore.dataSet.results.PRODUCT" name="label20_1"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrderExceptionsByProductAndStore.dataSet.results.ORDER_EXCEPTIONS" navigation="Pager" pagesize="10" name="grid9">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DISCREPENCY_DSC" caption="Exception" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_QTY" caption="Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="container13">
+                            <wm-container name="OrderDetailContainer">
+                                <wm-label padding="unset 0.5em" caption="Order Number:" fontweight="bold" name="label19"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderDetail.dataSet.results.ORDER_NBR" name="label20"></wm-label>
+                                <wm-grid title="" dataset="bind:Variables.svcOrderDetail.dataSet.results.ORDER_DETAIL" navigation="Pager" name="grid4" spacing="normal" pagesize="10">
+                                    <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="40%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="SHIP_QTY" caption="Order Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                </wm-grid>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+        <wm-container name="container8"></wm-container>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>
