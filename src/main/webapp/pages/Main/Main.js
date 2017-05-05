@@ -254,6 +254,10 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     $scope.grid1Click = function($event, $isolateScope, $rowData) {
         console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
     };
 
 
@@ -267,17 +271,53 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     };
 
+
+    $scope.grid4_1Click = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+    };
+
+
+    $scope.grid6Click = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+    };
+
+
+    $scope.grid7Click = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+    };
+
+
+    $scope.grid1Rowdblclick = function($event, $isolateScope, $rowData) {
+        console.log('The order number selected is: ', $rowData.ORDER_NBR);
+        $scope.Widgets.askWatson.send($rowData.ORDER_NBR.toString());
+        $scope.Widgets.askWatson.enablechat();
+    };
+
+
+    $scope.grid5Rowdblclick = function($event, $isolateScope, $rowData) {
+        console.log('The order number selected is: ', $rowData.ORDER_NBR);
+        $scope.Widgets.askWatson.send($rowData.ORDER_NBR.toString());
+        $scope.Widgets.askWatson.enablechat();
+    };
+
 }]);
 
 Application.$controller("grid1Controller", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
-        /* attempt to get a call back on a row click for order */
-        $scope.ORDER_NBROnClick = function($event, $isolateScope, rowData) {
-            console.log('The row data with index: ', rowData);
-        };
-
     }
 ]);
 
@@ -306,6 +346,13 @@ Application.$controller("grid5Controller", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
+
+        $scope.customRowAction = function($event, $rowData) {
+            console.log('The order number selected is: ', $rowData.ORDER_NBR);
+            $scope.Widgets.askWatson.send($rowData.ORDER_NBR.toString());
+            $scope.Widgets.askWatson.enablechat();
+        };
+
     }
 ]);
 
